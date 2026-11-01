@@ -6,9 +6,9 @@ This repository holds public-key/configuration metadata, appcasts and release no
 
 ## What is configured
 
-- Source: `feowur/lucent`; downloads: `feowur/lucent-updates`. Both are currently private. This runbook changes neither visibility nor release publication automatically.
+- Source: `feowur/lucent-source`; downloads: `feowur/lucent`. Both are currently private. This runbook changes neither visibility nor release publication automatically.
 - Sparkle **2.10.1**, pinned in Xcode's `Package.resolved`. One `SPUStandardUpdaterController` in `lucent/UpdateChecker.swift` owns the native checking, release notes, progress, cancellation, installation and relaunch flow.
-- Feed: `https://github.com/feowur/lucent-updates/releases/latest/download/appcast.xml` (`SUFeedURL`). User-initiated checks only.
+- Feed: `https://github.com/feowur/lucent/releases/latest/download/appcast.xml` (`SUFeedURL`). User-initiated checks only.
 - `SUPublicEDKey` authenticates Ed25519-signed archives; `SUVerifyUpdateBeforeExtraction` is enabled. Sparkle's standard installer performs replacement/relaunch. Its supported relaunch callback shares the Restart button's wrap-close animation (normally 280ms, with a 600ms fallback); the updated app restores its position and uses the normal wrap-open animation. Update errors restore the window.
 - Ad-hoc code signing remains the chosen route. It does not give a verified developer identity or notarization. Users may need macOS Privacy & Security → Open Anyway, and updates may require input permissions to be approved again. No Apple Developer membership is part of these instructions.
 

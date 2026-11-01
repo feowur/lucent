@@ -13,7 +13,7 @@
 <p>Mouse output always follows the pointer. Fixed-position selection and capture have been removed; Mouse and Key output remain available.</p>
 <p>This build is ad-hoc signed and not notarized. macOS may require approval to open it and grant input access.</p>
 ]]></description>
-            <enclosure url="https://github.com/feowur/lucent-updates/releases/download/v0.1/lucent-0.1.zip" length="3505827" type="application/octet-stream" sparkle:edSignature="DW6Eb7b41ilCfpnYoLTlKEqn8cmNP0vG1nqdZDBk2kTpVS4HU7E4n4W2adu31KF1dJHJTHdZGX0x09gnza7pCg=="/>
+            <enclosure url="https://github.com/feowur/lucent/releases/download/v0.1/lucent-0.1.zip" length="3505824" type="application/octet-stream" sparkle:edSignature="p4cPw0oGeKe430ncN9U0Dh5nxvZMtdEb5Da9AdgpgJVpKilVoggXoaq7vUbp44D66/hnq0N17aeGe6A+XA91CA=="/>
         </item>
     </channel>
 </rss>
