@@ -10,9 +10,10 @@
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <description><![CDATA[<p>First development distribution of lucent: native mouse/key repetition up to the current 250-CPS configuration ceiling, configurable F5 Start and Command-L Open/Close defaults, glass and custom backgrounds, and manually initiated signed Sparkle updates.</p>
 <p>Imported backgrounds persist in the user's Application Support folder across app moves and updates; referenced legacy backgrounds are migrated without moving originals. Restart and update relaunch share lucent's existing wrap animation.</p>
+<p>Mouse output always follows the pointer. Fixed-position selection and capture have been removed; Mouse and Key output remain available.</p>
 <p>This build is ad-hoc signed and not notarized. macOS may require approval to open it and grant input access.</p>
 ]]></description>
-            <enclosure url="https://github.com/feowur/lucent-updates/releases/download/v0.1/lucent-0.1.zip" length="3537239" type="application/octet-stream" sparkle:edSignature="gkb8m1E2Yk6dzi9Fu77jLbscT47yFgcG6pdm4+iKTxbweKtGcw5PxlLCJnXGzqSG6nexdHAbolbZWz+g13JoBg=="/>
+            <enclosure url="https://github.com/feowur/lucent-updates/releases/download/v0.1/lucent-0.1.zip" length="3505827" type="application/octet-stream" sparkle:edSignature="DW6Eb7b41ilCfpnYoLTlKEqn8cmNP0vG1nqdZDBk2kTpVS4HU7E4n4W2adu31KF1dJHJTHdZGX0x09gnza7pCg=="/>
         </item>
     </channel>
 </rss>
