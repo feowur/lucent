@@ -8,18 +8,17 @@ I couldn't find a native macOS autoclicker I liked, so I made my own.
 
 ### Features
 
-- Up to 250 CPS
-- Mouse and keyboard output
-- Global shortcuts with Hold and Toggle modes
-- Adjustable timing and repeat behavior
-- Custom glass appearance and backgrounds
-- Signed automatic updates via Sparkle
+- Does the clicking (and key pressing) for you.
+- Up to 250 clicks per second. For some reason.
+- Global shortcuts with Hold and Toggle modes.
+- Adjustable timing and repeat settings.
+- Glass UI, custom backgrounds, and automatic updates.
 
 ### Installation
 
-Download `lucent-0.1.dmg`, open it, and drag **lucent** into **Applications**.
+Grab `lucent-0.1.dmg`, open it, and drag **lucent** into **Applications**.
 
-lucent is currently ad-hoc signed and not Apple-notarized. macOS may require approval through **System Settings → Privacy & Security** on first launch.
+macOS might complain the first time since lucent isn't notarized yet. If it does, try opening it, then head to **System Settings → Privacy & Security → Open Anyway**.
 
 ---
 
