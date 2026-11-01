@@ -6,5 +6,13 @@
   "publicKey": "rQR6aG18HttondxPXmALFwUAX23mXi+uOxdHzeKuanU=",
   "bundleIdentifier": "local.plix.app",
   "sparkleVersion": "2.10.1",
-  "distributionStatus": "private; unauthenticated clients cannot access release assets"
+  "distributionStatus": "private and draft; anonymous downloads unavailable",
+  "draftVersion": "0.1",
+  "draftBuild": 3,
+  "draftTag": "v0.1",
+  "sourceCommit": "3584e4f5d8f5204f5d5b03016561840f101763b6",
+  "archiveSHA256": "afa17ff03c6c404695023868c339c2245a2d773760c0094affad02f7885efd0b",
+  "codeSigning": "ad-hoc",
+  "archiveSigning": "Sparkle Ed25519",
+  "lastLocalUpdateTest": "2026-11-01: signed 0.1 (100) to 0.1.1 (101), installed and relaunched; signature verified"
 }

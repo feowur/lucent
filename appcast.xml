@@ -8,9 +8,10 @@
             <sparkle:version>3</sparkle:version>
             <sparkle:shortVersionString>0.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<p>lucent now uses Sparkle for signed updates, release notes, download progress and installation/relaunch. Updates remain manually initiated. This first build establishes the updater; it does not change the clicking engine.</p>
+            <description><![CDATA[<p>First development distribution of lucent: native mouse/key repetition up to the current 250-CPS configuration ceiling, configurable F3 Start and Command-L Open/Close defaults, glass and custom backgrounds, and manually initiated signed Sparkle updates.</p>
+<p>This build is ad-hoc signed and not notarized. macOS may require approval to open it and grant input access. General distribution still needs the documented background-storage portability change.</p>
 ]]></description>
-            <enclosure url="https://github.com/feowur/lucent-updates/releases/download/v0.1/lucent-0.1.zip" length="3511941" type="application/octet-stream" sparkle:edSignature="nC1LUuftAZqA8u/UZKvFUiSL7KByccv06BNCwFk6uA2UoH1Up28KCRhwcxsw/24XM00ml3sdqSvg0ukKsO29CQ=="/>
+            <enclosure url="https://github.com/feowur/lucent-updates/releases/download/v0.1/lucent-0.1.zip" length="3520121" type="application/octet-stream" sparkle:edSignature="nYcM9cU/7hrOOmNWKlIBIop3T3SbDSXliNVgxyxi3J/SS1RidwmX6jpJCasxhQ5MzpjyBly+sj5zaBmQy8MAAw=="/>
         </item>
     </channel>
 </rss>

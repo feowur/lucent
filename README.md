@@ -1,22 +1,63 @@
-# lucent updates (feowur)
+# lucent update distribution
 
-Sparkle 2.10.1 handles checking, notes, download progress, cancellation, Ed25519 verification, installation and relaunch. `lucent/UpdateChecker.swift` owns the single controller. Settings uses the existing button; Sparkle supplies its supported native update dialogs. The restart overlay is visual only and never postpones installation. Relaunch uses lucent's normal window animation and version label.
+This repository holds public-key/configuration metadata, appcasts and release notes. Publishing commands below run from the **source checkout**, not this repository. ZIP archives belong in GitHub Release assets. Both repositories and the v0.1 draft remain private/unpublished at this handoff.
 
-## Signing
+# Updating lucent — ad-hoc distribution
 
-Development builds are ad-hoc signed (`Scripts/build.sh Release`). Ad-hoc signing does not certify a publisher identity. The publisher is feowur. Sparkle separately verifies archives against `SUPublicEDKey` in `lucent/Info.plist`. The corresponding private key is in the login Keychain, service `https://sparkle-project.org`, account `lucent-updates`. Never commit/export it into a repository or app. Back it up securely outside Git before distributing the first build; loss prevents signing future updates for existing clients.
+## What is configured
 
-## Private testing
+- Source: `feowur/lucent`; downloads: `feowur/lucent-updates`. Both are currently private. This runbook changes neither visibility nor release publication automatically.
+- Sparkle **2.10.1**, pinned in Xcode's `Package.resolved`. One `SPUStandardUpdaterController` in `lucent/UpdateChecker.swift` owns the native checking, release notes, progress, cancellation, installation and relaunch flow.
+- Feed: `https://github.com/feowur/lucent-updates/releases/latest/download/appcast.xml` (`SUFeedURL`). User-initiated checks only.
+- `SUPublicEDKey` authenticates Ed25519-signed archives; `SUVerifyUpdateBeforeExtraction` is enabled. Sparkle's standard installer performs replacement/relaunch. The lucent restart overlay never delays installation.
+- Ad-hoc code signing remains the chosen route. It does not give a verified developer identity or notarization. Users may need macOS Privacy & Security → Open Anyway, and updates may require input permissions to be approved again. No Apple Developer membership is part of these instructions.
 
-Both `feowur/lucent` (source) and `feowur/lucent-updates` (distribution) are private. The production feed URL is `https://github.com/feowur/lucent-updates/releases/latest/download/appcast.xml`. It will fail for unauthenticated clients while private. No token is embedded, and a 404 is an error, not an up-to-date result.
+## What belongs where
 
-`Scripts/test-updater.py` makes isolated copies of the Release app with a distinct bundle ID, serves signed archives on loopback, and opens the older copy. Use its existing Check for Updates button and follow Sparkle's Download / Install and Relaunch. The server prints instructions; Ctrl-C removes only the local test server. Test artifacts stay ignored under `build/UpdaterTest`. This exercises the production updater with no private GitHub credentials.
+| Location | Include | Exclude |
+| --- | --- | --- |
+| Source repository | `lucent/`, `lucent.xcodeproj/`, pinned `Package.resolved`, `Scripts/`, `Tests/`, `Updates/`, `README.md`, MIT `LICENSE`, `.gitignore`, original `icon.png`, empty `UserData/.gitkeep` | Builds/apps/zips/dmgs/dSYMs, logs/Validation, Checkpoints, Research, imported user media, preferences, Obsidian, `.DS_Store`, Xcode user state, secrets/private keys/tokens/certificates |
+| Distribution repository Git tree | Public key, appcast, notes, configuration metadata and publishing instructions | App source, user data, credentials, private signing key, intermediate builds |
+| Distribution GitHub Release assets | `appcast.xml`, signed `lucent-VERSION.zip`, optional release notes file | Source checkout, `.git`, dSYM, debug builds, test app, keys/tokens |
+| Inside `lucent.app` | Executable, normal resources/assets, embedded Sparkle framework, Sparkle license notices, public key/feed URL in Info.plist | GitHub tokens, Ed25519 private key, publishing scripts, test fixtures |
 
-## First distribution
+The public update signing key is intentionally safe to include in both repositories and the app. The private key remains in the login Keychain under account `lucent-updates`. GitHub authentication is only for the publisher's `gh` CLI. Do not add Authorization headers or a GitHub token to the app to make private assets work.
 
-1. Keep the private source repository private. Make update assets anonymously accessible when you are ready (e.g. make only `lucent-updates` public). No visibility change is performed by these scripts.
-2. Increase both `CFBundleVersion` (monotonically) and `CFBundleShortVersionString` in `lucent/Info.plist`; build Release. Keep the bundle identifier, Ed25519 public key and app name stable.
-3. Run `Scripts/prepare-update.sh /absolute/path/lucent.app v0.2 Updates/notes.html`. It verifies the app signature, packages with `ditto`, signs with the Keychain key, generates an appcast and creates a **draft** release in the distribution repository. Source and credentials are never included.
-4. Review the draft's appcast, archive, and notes. Publish it manually only after testing. The stable `latest/download/appcast.xml` URL resolves to the published release. Until downloads are public, use local testing. Keep prior appcast entries when preparing subsequent releases (download the previous appcast into the output directory first).
+## Seven remaining steps before a general public release
 
-The script intentionally does not install an app or publish a release automatically. No automatic downloads/checks are enabled by default. For broad installation on other Macs, Apple Developer ID/notarization remains a separate Gatekeeper requirement; ad-hoc signing plus Sparkle archive signing does not bypass it. Updates can change TCC trust for ad-hoc builds; lucent does not reset permissions.
+1. **Resolve media portability.** The approved app currently embeds the development workspace path for background storage. Move/migrate media to the user's Application Support directory in a separately authorized app change, then build/test that candidate. This preparation pass documents the issue; it does not silently change runtime storage.
+2. **Back up the existing signing key securely.** Use Sparkle's `generate_keys --account lucent-updates -x /secure/outside-repositories/private-key` only to an encrypted/private backup location, with access restricted to you. Never generate a replacement key for an app already distributed. Keep this backup and recovery information outside Git and the app.
+3. **Decide repository visibility.** Anonymous clients need public update assets. When you authorize it, make only `lucent-updates` public (or provide another public GitHub-hosted distribution endpoint). Opening the source `lucent` repository is optional and separate. No visibility change has been performed.
+4. **Prepare the first public candidate.** Current draft `v0.1` is the initial-install baseline, not an update for clients already on build 3. For the first actual update use, for example, short version `0.1.1` and build `4` in `lucent/Info.plist`. Increase the numeric build every release; keep app name, bundle ID and public key unchanged.
+5. **Build and prepare a draft**, using the commands below. The script checks the app signature and matching Keychain public key, packages with `ditto`, generates the signed enclosure/appcast, and creates or refreshes a private/unpublished draft. It refuses to overwrite a published release.
+6. **Test the candidate.** Run the loopback test and install the actual downloaded draft on a second Mac if available. Check startup, input access, a short controlled mouse/key run, backgrounds, update cancellation/relaunch and version change. Local update testing does not establish another Mac's Gatekeeper/TCC behavior.
+7. **Publish manually when ready.** Review assets and notes, then publish the draft in GitHub. Ensure its appcast URL and ZIP URL work without signing in. A private or draft release returning 404 is not a successful public update service.
+
+## Build / draft commands
+
+```sh
+./Scripts/build.sh Release
+# The pinned Swift package already supplies generate_appcast/generate_keys/sign_update:
+# build/SourcePackages/artifacts/sparkle/Sparkle/bin/
+gh auth status
+./Scripts/prepare-update.sh "$PWD/build/Build/Products/Release/lucent.app" v0.1 Updates/notes.html
+```
+
+Use `v0.1.1` after changing the app to version 0.1.1/build 4. `SPARKLE_TOOLS_DIR` can override the pinned tool directory if deliberately needed. Run `gh auth login` as the publishing account only if not already authenticated. No CI secrets are required for the local workflow.
+
+`prepare-update.sh` refreshes assets only while a release is still a draft. Published releases are left intact; bump the version/build instead. Each generated feed points at the full latest archive, so older clients do not need every intermediate version. Avoid automatic/delta publishing until you actually need it.
+
+## Controlled private update test
+
+```sh
+./Scripts/build.sh Release
+python3 Scripts/test-updater.py
+```
+
+Quit a previous fixture app before rerunning. The script creates two ignored copies under `build/UpdaterTest`, with a distinct bundle ID and a random loopback-only feed. In its app, choose Settings → Misc → Check for updates, then Install Update, then Install and Relaunch. Confirm v0.1.1/build 101 replaces v0.1/build 100. Ctrl-C stops the local server; quit the fixture afterward and reopen the main Release app. This uses the real Sparkle signature/download/install lifecycle without putting GitHub credentials in the client.
+
+## Reference
+
+- [Sparkle setup](https://sparkle-project.org/documentation/)
+- [Sparkle publishing/signing](https://sparkle-project.org/documentation/publishing/)
+- [Apple: opening an unnotarized app](https://support.apple.com/en-us/102445)
