@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>lucent</title>
+        <item>
+            <title>0.1</title>
+            <pubDate>Sun, 01 Nov 2026 07:15:58 +0300</pubDate>
+            <sparkle:version>3</sparkle:version>
+            <sparkle:shortVersionString>0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<p>lucent now uses Sparkle for signed updates, release notes, download progress and installation/relaunch. Updates remain manually initiated. This first build establishes the updater; it does not change the clicking engine.</p>
+]]></description>
+            <enclosure url="https://github.com/feowur/lucent-updates/releases/download/v0.1/lucent-0.1.zip" length="3511941" type="application/octet-stream" sparkle:edSignature="nC1LUuftAZqA8u/UZKvFUiSL7KByccv06BNCwFk6uA2UoH1Up28KCRhwcxsw/24XM00ml3sdqSvg0ukKsO29CQ=="/>
+        </item>
+    </channel>
+</rss>

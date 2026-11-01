@@ -1,0 +1,10 @@
+{
+  "publisher": "feowur",
+  "sourceRepository": "feowur/lucent",
+  "distributionRepository": "feowur/lucent-updates",
+  "feedURL": "https://github.com/feowur/lucent-updates/releases/latest/download/appcast.xml",
+  "publicKey": "rQR6aG18HttondxPXmALFwUAX23mXi+uOxdHzeKuanU=",
+  "bundleIdentifier": "local.plix.app",
+  "sparkleVersion": "2.10.1",
+  "distributionStatus": "private; unauthenticated clients cannot access release assets"
+}
