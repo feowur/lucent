@@ -4,7 +4,7 @@ I couldn't find a native macOS autoclicker I liked, so I made my own.
 
 ![lucent](assets/lucent.png)
 
-[**Download lucent**](https://github.com/feowur/lucent/releases/latest)
+[**Download lucent (.dmg)**](https://github.com/feowur/lucent/releases/download/v0.1/lucent-0.1.dmg)
 
 ### Features
 
@@ -17,7 +17,7 @@ I couldn't find a native macOS autoclicker I liked, so I made my own.
 
 ### Installation
 
-Download the latest ZIP from [Releases](https://github.com/feowur/lucent/releases), extract `lucent.app`, and move it to Applications.
+Download `lucent-0.1.dmg`, open it, and drag **lucent** into **Applications**.
 
 lucent is currently ad-hoc signed and not Apple-notarized. macOS may require approval through **System Settings → Privacy & Security** on first launch.
 
