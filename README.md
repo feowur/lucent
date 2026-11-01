@@ -20,6 +20,8 @@ Grab `lucent-0.1.dmg`, open it, and drag **lucent** into **Applications**.
 
 macOS might complain the first time since lucent isn't notarized yet. If it does, try opening it, then head to **System Settings → Privacy & Security → Open Anyway**.
 
+To uninstall, just drag **lucent** from **Applications** to the Trash. That's it.
+
 ---
 
 Made by [feowur](https://github.com/feowur).
