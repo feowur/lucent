@@ -9,7 +9,7 @@ This repository holds public-key/configuration metadata, appcasts and release no
 - Source: `feowur/lucent`; downloads: `feowur/lucent-updates`. Both are currently private. This runbook changes neither visibility nor release publication automatically.
 - Sparkle **2.10.1**, pinned in Xcode's `Package.resolved`. One `SPUStandardUpdaterController` in `lucent/UpdateChecker.swift` owns the native checking, release notes, progress, cancellation, installation and relaunch flow.
 - Feed: `https://github.com/feowur/lucent-updates/releases/latest/download/appcast.xml` (`SUFeedURL`). User-initiated checks only.
-- `SUPublicEDKey` authenticates Ed25519-signed archives; `SUVerifyUpdateBeforeExtraction` is enabled. Sparkle's standard installer performs replacement/relaunch. The lucent restart overlay never delays installation.
+- `SUPublicEDKey` authenticates Ed25519-signed archives; `SUVerifyUpdateBeforeExtraction` is enabled. Sparkle's standard installer performs replacement/relaunch. Its supported relaunch callback shares the Restart button's wrap-close animation (normally 280ms, with a 600ms fallback); the updated app restores its position and uses the normal wrap-open animation. Update errors restore the window.
 - Ad-hoc code signing remains the chosen route. It does not give a verified developer identity or notarization. Users may need macOS Privacy & Security → Open Anyway, and updates may require input permissions to be approved again. No Apple Developer membership is part of these instructions.
 
 ## What belongs where
@@ -23,15 +23,14 @@ This repository holds public-key/configuration metadata, appcasts and release no
 
 The public update signing key is intentionally safe to include in both repositories and the app. The private key remains in the login Keychain under account `lucent-updates`. GitHub authentication is only for the publisher's `gh` CLI. Do not add Authorization headers or a GitHub token to the app to make private assets work.
 
-## Seven remaining steps before a general public release
+## Remaining steps before a general public release
 
-1. **Resolve media portability.** The approved app currently embeds the development workspace path for background storage. Move/migrate media to the user's Application Support directory in a separately authorized app change, then build/test that candidate. This preparation pass documents the issue; it does not silently change runtime storage.
-2. **Back up the existing signing key securely.** Use Sparkle's `generate_keys --account lucent-updates -x /secure/outside-repositories/private-key` only to an encrypted/private backup location, with access restricted to you. Never generate a replacement key for an app already distributed. Keep this backup and recovery information outside Git and the app.
-3. **Decide repository visibility.** Anonymous clients need public update assets. When you authorize it, make only `lucent-updates` public (or provide another public GitHub-hosted distribution endpoint). Opening the source `lucent` repository is optional and separate. No visibility change has been performed.
-4. **Prepare the first public candidate.** Current draft `v0.1` is the initial-install baseline, not an update for clients already on build 3. For the first actual update use, for example, short version `0.1.1` and build `4` in `lucent/Info.plist`. Increase the numeric build every release; keep app name, bundle ID and public key unchanged.
-5. **Build and prepare a draft**, using the commands below. The script checks the app signature and matching Keychain public key, packages with `ditto`, generates the signed enclosure/appcast, and creates or refreshes a private/unpublished draft. It refuses to overwrite a published release.
-6. **Test the candidate.** Run the loopback test and install the actual downloaded draft on a second Mac if available. Check startup, input access, a short controlled mouse/key run, backgrounds, update cancellation/relaunch and version change. Local update testing does not establish another Mac's Gatekeeper/TCC behavior.
-7. **Publish manually when ready.** Review assets and notes, then publish the draft in GitHub. Ensure its appcast URL and ZIP URL work without signing in. A private or draft release returning 404 is not a successful public update service.
+1. **Back up the existing signing key securely.** Use Sparkle's `generate_keys --account lucent-updates -x /secure/outside-repositories/private-key` only to an encrypted/private backup location, with access restricted to you. Never generate a replacement key for an app already distributed. Keep this backup and recovery information outside Git and the app.
+2. **Decide repository visibility.** Anonymous clients need public update assets. When you authorize it, make only `lucent-updates` public (or provide another public GitHub-hosted distribution endpoint). Opening the source `lucent` repository is optional and separate. No visibility change has been performed.
+3. **Choose the version.** Draft `v0.1` is the initial-install baseline, not an update for clients already on build 3. For the first subsequent update use, for example, short version `0.1.1` and build `4` in `lucent/Info.plist`. Increase the numeric build every release; keep app name, bundle ID and public key unchanged.
+4. **Build and prepare a draft**, using the commands below. The script checks the app signature and matching Keychain public key, packages with `ditto`, generates the signed enclosure/appcast, and creates or refreshes a private/unpublished draft. It refuses to overwrite a published release.
+5. **Test the candidate on another Mac if available.** Check startup, input access, a short controlled mouse/key run, backgrounds and update cancellation/relaunch. Local update testing does not establish another Mac's Gatekeeper/TCC behavior. Background storage now uses the user's Application Support directory and migrates referenced legacy files by copying them.
+6. **Publish manually when ready.** Review assets and notes, then publish the draft in GitHub. Ensure its appcast URL and ZIP URL work without signing in. A private or draft release returning 404 is not a successful public update service.
 
 ## Build / draft commands
 

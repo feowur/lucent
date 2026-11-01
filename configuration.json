@@ -10,9 +10,14 @@
   "draftVersion": "0.1",
   "draftBuild": 3,
   "draftTag": "v0.1",
-  "sourceCommit": "3584e4f5d8f5204f5d5b03016561840f101763b6",
-  "archiveSHA256": "afa17ff03c6c404695023868c339c2245a2d773760c0094affad02f7885efd0b",
+  "sourceCommit": "6141fd14a16e847a998cab7688c4c2500a9f2514",
+  "archiveSHA256": "fe175a9f19954d21b7e33a0bc582d3f141ce9dc90afb842d55e29085084bdd6c",
   "codeSigning": "ad-hoc",
   "archiveSigning": "Sparkle Ed25519",
-  "lastLocalUpdateTest": "2026-11-01: signed 0.1 (100) to 0.1.1 (101), installed and relaunched; signature verified"
+  "lastLocalUpdateTest": "2026-11-01: signed 0.1 (100) to 0.1.1 (101), installed/relaunched after relocation with imported GIF retained; strict signature and geometry verified",
+  "archiveSize": 3537239,
+  "archiveEdSignature": "gkb8m1E2Yk6dzi9Fu77jLbscT47yFgcG6pdm4+iKTxbweKtGcw5PxlLCJnXGzqSG6nexdHAbolbZWz+g13JoBg==",
+  "appcastSHA256": "a8739174a6c088dfbc96090907cf61938d3f8277e6a8c6d166879f0d6e29b19a",
+  "releaseNotesSHA256": "d50f21e1bd47700aaecfc1d6a273befbdf6d4f9564433885d12373ab2aa8d2c0",
+  "backgroundStorage": "~/Library/Application Support/lucent/Backgrounds/"
 }

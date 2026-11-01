@@ -8,10 +8,11 @@
             <sparkle:version>3</sparkle:version>
             <sparkle:shortVersionString>0.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<p>First development distribution of lucent: native mouse/key repetition up to the current 250-CPS configuration ceiling, configurable F3 Start and Command-L Open/Close defaults, glass and custom backgrounds, and manually initiated signed Sparkle updates.</p>
-<p>This build is ad-hoc signed and not notarized. macOS may require approval to open it and grant input access. General distribution still needs the documented background-storage portability change.</p>
+            <description><![CDATA[<p>First development distribution of lucent: native mouse/key repetition up to the current 250-CPS configuration ceiling, configurable F5 Start and Command-L Open/Close defaults, glass and custom backgrounds, and manually initiated signed Sparkle updates.</p>
+<p>Imported backgrounds persist in the user's Application Support folder across app moves and updates; referenced legacy backgrounds are migrated without moving originals. Restart and update relaunch share lucent's existing wrap animation.</p>
+<p>This build is ad-hoc signed and not notarized. macOS may require approval to open it and grant input access.</p>
 ]]></description>
-            <enclosure url="https://github.com/feowur/lucent-updates/releases/download/v0.1/lucent-0.1.zip" length="3520121" type="application/octet-stream" sparkle:edSignature="nYcM9cU/7hrOOmNWKlIBIop3T3SbDSXliNVgxyxi3J/SS1RidwmX6jpJCasxhQ5MzpjyBly+sj5zaBmQy8MAAw=="/>
+            <enclosure url="https://github.com/feowur/lucent-updates/releases/download/v0.1/lucent-0.1.zip" length="3537239" type="application/octet-stream" sparkle:edSignature="gkb8m1E2Yk6dzi9Fu77jLbscT47yFgcG6pdm4+iKTxbweKtGcw5PxlLCJnXGzqSG6nexdHAbolbZWz+g13JoBg=="/>
         </item>
     </channel>
 </rss>
