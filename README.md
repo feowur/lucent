@@ -1,5 +1,7 @@
 # lucent
 
+**Early release:** lucent is my first app, and v0.1 has only had limited testing. Long-term stability is anyone's guess for now.
+
 I couldn't find a native macOS autoclicker I liked, so I made my own.
 
 ![lucent](assets/lucent.png)
