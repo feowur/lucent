@@ -24,5 +24,7 @@
   "releaseTag": "v0.1.1",
   "dmgSHA256": "4d1dd5668a4892f9b3430fa569a8e1cda3ed9e10c985ff009a30173fb16523cc",
   "dmgSize": 3373912,
-  "automaticChecks": "Sparkle opt-in consent; no profile data sent without consent"
+  "automaticChecks": "Sparkle opt-in consent; no profile data sent without consent",
+  "lastPublicUpdateTest": "2026-11-02: exact Dock-pinned public v0.1 build3, PID7131 -> v0.1.1 build4 feowur.lucent PID7190 via published HTTPS feed; Nothing was changed. displayed; settings/window origin identical; signature verified",
+  "previousRelease": "v0.1 release retired after successful public migration; historical tag retained"
 }
