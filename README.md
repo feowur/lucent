@@ -2,6 +2,8 @@
 
 **Early release:** lucent is my first app, and v0.1 has only had limited testing. Long-term stability is anyone's guess for now.
 
+**Source languages:** Swift 89.1% · Python 8.3% · Shell 2.3% · HTML 0.3%
+
 I couldn't find a native macOS autoclicker I liked, so I made my own.
 
 ![lucent](assets/lucent.png)
