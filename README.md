@@ -8,7 +8,7 @@ I couldn't find a native macOS autoclicker I liked, so I made my own.
 
 ![lucent](assets/lucent.png)
 
-[**Download lucent (.dmg)**](https://github.com/feowur/lucent/releases/download/v0.1/lucent-0.1.dmg)
+[**Download lucent (.dmg)**](https://github.com/feowur/lucent/releases/latest/download/lucent.dmg)
 
 ### Features
 
