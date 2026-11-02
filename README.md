@@ -1,6 +1,6 @@
 # lucent
 
-**Early release:** lucent is my first, it only had limited testing. Long-term stability is anyone's guess for now.
+**Early release:** lucent is my first native macOS app. It has had limited testing, so long-term stability is still unproven.
 
 **Source languages:** Swift 89.1% · Python 8.3% · Shell 2.3% · HTML 0.3%
 
