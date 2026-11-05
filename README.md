@@ -12,11 +12,9 @@ I couldn't find a native macOS autoclicker I liked, so I made my own.
 
 ### Features
 
-- Does the clicking (and key pressing) for you.
-- Up to 250 clicks per second. For some reason.
-- Global shortcuts with Hold and Toggle modes.
-- Adjustable timing and repeat settings.
-- Glass UI, custom backgrounds, and automatic updates.
+- Mouse and key repeating up to 250 CPS, with Hold or Toggle.
+- Configurable shortcuts, timing and repeat limits.
+- Native glass, image/GIF backgrounds and manual updates.
 
 ### Installation
 

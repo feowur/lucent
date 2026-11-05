@@ -1,18 +1,14 @@
-<?xml version="1.0" standalone="yes"?>
-<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:ns0="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
         <title>lucent</title>
         <item>
-            <title>0.1.1</title>
-            <pubDate>Mon, 02 Nov 2026 08:25:16 +0300</pubDate>
-            <sparkle:version>4</sparkle:version>
-            <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<p>Nothing was changed.</p>
-<p>The application identity is now feowur.lucent. macOS may require input permissions again; your settings and backgrounds are preserved.</p>
-<p>v0.1 users: choose Check for updates once in Settings → Misc. v0.1.1 offers Sparkle’s automatic-check consent prompt; updates are not pushed silently.</p>
-]]></description>
-            <enclosure url="https://github.com/feowur/lucent/releases/download/v0.1.1/lucent.zip" length="3505966" type="application/octet-stream" sparkle:edSignature="NJ8j+6XsT/ILRE3EGn8Q4q5RJoeNDGlcZh0ApccCjj6S/1z3Q5TJKPWHM6uf7caW9BE9z8SGiVMORcAstfo5Bw=="/>
+            <title>Now optimized</title>
+            <pubDate>Thu, 05 Nov 2026 17:36:53 +0300</pubDate>
+            <ns0:version>5</ns0:version>
+            <ns0:shortVersionString>0.1.2</ns0:shortVersionString>
+            <ns0:minimumSystemVersion>14.0</ns0:minimumSystemVersion>
+            <enclosure url="https://github.com/feowur/lucent/releases/download/v0.1.2/lucent.zip" length="4202191" type="application/octet-stream" ns0:edSignature="E7xPsBp1LTmxkVG65OYONPUjy2jvkCHUqCBGCd4ckcdFB7I0D9Ss9lSB2Ae04dXHayDNltv0kUq9NHq7jUQZAQ==" />
         </item>
     </channel>
 </rss>
