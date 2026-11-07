@@ -3,12 +3,12 @@
     <channel>
         <title>lucent</title>
         <item>
-            <title>now optimized</title>
-            <pubDate>Thu, 05 Nov 2026 17:56:03 +0300</pubDate>
-            <ns0:version>6</ns0:version>
-            <ns0:shortVersionString>0.1.3</ns0:shortVersionString>
+            <title>slight changes</title>
+            <pubDate>Sat, 07 Nov 2026 17:59:03 +0300</pubDate>
+            <ns0:version>7</ns0:version>
+            <ns0:shortVersionString>0.1.4</ns0:shortVersionString>
             <ns0:minimumSystemVersion>14.0</ns0:minimumSystemVersion>
-            <enclosure url="https://github.com/feowur/lucent/releases/download/v0.1.3/lucent.zip" length="4202188" type="application/octet-stream" ns0:edSignature="KhThmAnVv1WWg52H7yRYyE53hn52aBEo4afa2gjoahINkqbYrzAFYM3k90B1U5IZVfdsSm8PJI8Iyljg884wBQ==" />
+            <enclosure url="https://github.com/feowur/lucent/releases/download/v0.1.4/lucent.zip" length="4195771" type="application/octet-stream" ns0:edSignature="mtMVPjyD24CQmfWSiFwKfZecV7O3frc+jdgg4aRl0cBCX8z2BAsg/OlCKvLegi6snMD35CpXOVtfHaD8y+XfCQ==" />
         </item>
     </channel>
 </rss>
